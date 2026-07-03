@@ -1,6 +1,5 @@
 import { Search, MapPin, Truck, Package, CheckCircle, Clock, AlertCircle } from 'lucide-react';
 import { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
 
 // Mock data for the 3 specific tracking IDs
 const TRACKING_DATA = {
@@ -31,9 +30,9 @@ const TRACKING_DATA = {
 	  { status: 'Arrived at Frankfurt Airport Cargo Terminal.', location: 'FRANKFURT, GERMANY', time: '6:30 AM', date: 'July 3' },
 	  { status: 'Cleared Belgian export customs', location: 'BRUSSELS, BELGIUM', time: '10:30 PM', date: 'July 2' },
 	  { status: 'Arrived at BRUSSELS, BELGIUM NETWORK DISTRIBUTION CENTER', location: 'BRUSSELS, BELGIUM NETWORK DISTRIBUTION CENTER', time: '9:30 PM', date: 'July 2' },
-    { status: 'In Transit to Next Facility', location: 'BRUSSELS, BELGIUM NETWORK DISTRIBUTION CENTER', time: '7:00 PM', date: 'July 2' },
-    { status: 'Departed Antwerp International Sorting Center', location: 'ANTWERP, BELGIUM NETWORK DISTRIBUTION CENTER', time: '5:45 PM', date: 'July 2' },
-    { status: 'Shipment accepted at local post office.', location: 'ANTWERP, BELGIUM NETWORK DISTRIBUTION CENTER', time: '5:20 AM', date: 'July 2' },
+      { status: 'In Transit to Next Facility', location: 'BRUSSELS, BELGIUM NETWORK DISTRIBUTION CENTER', time: '7:00 PM', date: 'July 2' },
+      { status: 'Departed Antwerp International Sorting Center', location: 'ANTWERP, BELGIUM NETWORK DISTRIBUTION CENTER', time: '5:45 PM', date: 'July 2' },
+      { status: 'Shipment accepted at local post office.', location: 'ANTWERP, BELGIUM NETWORK DISTRIBUTION CENTER', time: '5:20 AM', date: 'July 2' },
     ],
     progress: 2
   },
@@ -130,28 +129,22 @@ export default function App() {
               </button>
             </div>
             {error && (
-              <motion.div 
-                initial={{ opacity: 0, y: -10 }}
-                animate={{ opacity: 1, y: 0 }}
-                className="absolute top-full left-0 right-0 mt-3 p-3 bg-red-50 border border-red-200 rounded-md flex items-start gap-2 text-red-700 text-sm text-left"
+              <div 
+                className="absolute top-full left-0 right-0 mt-3 p-3 bg-red-50 border border-red-200 rounded-md flex items-start gap-2 text-red-700 text-sm text-left animate-fade-in"
               >
                 <AlertCircle className="h-5 w-5 shrink-0 mt-0.5" />
                 <span>{error}</span>
-              </motion.div>
+              </div>
             )}
           </form>
         </div>
       </div>
 
       {/* Results Section */}
-      <AnimatePresence>
-        {result && (
-          <motion.main 
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: 20 }}
-            className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10"
-          >
+      {result && (
+        <main 
+          className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 animate-fade-in"
+        >
             <div className="grid lg:grid-cols-3 gap-8">
               
               {/* Left Column: Status & History */}
@@ -287,9 +280,8 @@ export default function App() {
 
               </div>
             </div>
-          </motion.main>
+          </main>
         )}
-      </AnimatePresence>
 
       {/* Footer */}
       <footer className="bg-gray-100 border-t border-gray-200 mt-auto py-12">
