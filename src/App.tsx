@@ -1,6 +1,6 @@
 import { Search, MapPin, Truck, Package, CheckCircle, Clock, AlertCircle } from 'lucide-react';
 import { useState } from 'react';
-import { motion, AnimatePresence } from 'motion/react';
+import { motion, AnimatePresence } from 'framer-motion';
 
 // Mock data for the 3 specific tracking IDs
 const TRACKING_DATA = {
@@ -21,15 +21,19 @@ const TRACKING_DATA = {
   },
   'B4V9Z1H6K3M8P2Q5W7Y0': {
     status: 'In Transit',
-    location: 'Chicago, IL 60607',
-    date: 'March 3, 2026',
+    location: 'Sao Paulo, Brazil',
+    date: 'July 2, 2026',
     time: 'On Time',
     carrier: 'USPS',
-    service: 'Priority Mail 2-Day',
+    service: 'Priority Mail 14-Day',
     history: [
-      { status: 'In Transit to Next Facility', location: '', time: '12:00 PM', date: 'March 3' },
-      { status: 'Departed USPS Regional Facility', location: 'CHICAGO IL NETWORK DISTRIBUTION CENTER', time: '9:45 AM', date: 'March 3' },
-      { status: 'Arrived at USPS Regional Facility', location: 'CHICAGO IL NETWORK DISTRIBUTION CENTER', time: '5:20 AM', date: 'March 3' },
+	  { status: 'Departed via international flight.', location: 'FRANKFURT, GERMANY', time: '10:30 AM', date: 'July 3' },
+	  { status: 'Arrived at Frankfurt Airport Cargo Terminal.', location: 'FRANKFURT, GERMANY', time: '6:30 AM', date: 'July 3' },
+	  { status: 'Cleared Belgian export customs', location: 'BRUSSELS, BELGIUM', time: '10:30 PM', date: 'July 2' },
+	  { status: 'Arrived at BRUSSELS, BELGIUM NETWORK DISTRIBUTION CENTER', location: 'BRUSSELS, BELGIUM NETWORK DISTRIBUTION CENTER', time: '9:30 PM', date: 'July 2' },
+    { status: 'In Transit to Next Facility', location: 'BRUSSELS, BELGIUM NETWORK DISTRIBUTION CENTER', time: '7:00 PM', date: 'July 2' },
+    { status: 'Departed Antwerp International Sorting Center', location: 'ANTWERP, BELGIUM NETWORK DISTRIBUTION CENTER', time: '5:45 PM', date: 'July 2' },
+    { status: 'Shipment accepted at local post office.', location: 'ANTWERP, BELGIUM NETWORK DISTRIBUTION CENTER', time: '5:20 AM', date: 'July 2' },
     ],
     progress: 2
   },
@@ -236,35 +240,25 @@ export default function App() {
                   </div>
                   
                   {/* 
-                    GOOGLE MAPS INTEGRATION:
-                    To add a real Google Map:
-                    1. Get an API Key from Google Cloud Console.
-                    2. Use the Google Maps Embed API or the JS API.
-                    3. Replace the div below with your iframe or map component.
-                    
-                    Example Iframe:
+                    FREE KEYLESS GOOGLE MAPS INTEGRATION:
+                    Using Google's standard public embed service which is 100% free and requires NO API keys or Cloud setup!
+                    For the Belgium -> Brazil package, it renders the dynamic flight routing.
+                  */}
+                  <div className="aspect-square bg-gray-100 relative group min-h-[300px] overflow-hidden">
                     <iframe
+                      title="Live Package Location"
                       width="100%"
                       height="100%"
                       style={{ border: 0, minHeight: '300px' }}
                       loading="lazy"
                       allowFullScreen
-                      src={`https://www.google.com/maps/embed/v1/place?key=YOUR_API_KEY&q=${encodeURIComponent(result.location)}`}>
-                    </iframe>
-                  */}
-                  <div className="aspect-square bg-gray-100 relative group min-h-[300px]">
-                    <div className="absolute inset-0 flex flex-col items-center justify-center text-gray-400 p-6 text-center z-10">
-                      <div className="bg-white p-3 rounded-full shadow-sm mb-3">
-                        <MapPin className="h-8 w-8 text-gray-300" />
-                      </div>
-                      <p className="font-medium text-gray-500">Map Visualization Space</p>
-                      <p className="text-xs text-gray-400 mt-1 max-w-[200px]">
-                        Replace this container with your Google Maps Embed code to show real-time location.
-                      </p>
-                    </div>
-                    
-                    {/* Background Pattern to simulate map texture */}
-                    <div className="absolute inset-0 opacity-5 bg-[radial-gradient(#cbd5e1_1px,transparent_1px)] [background-size:16px_16px]" />
+                      referrerPolicy="no-referrer-when-downgrade"
+                      src={
+                        trackingId === 'B4V9Z1H6K3M8P2Q5W7Y0'
+                          ? "https://maps.google.com/maps?q=Brussels,Belgium+to+Sao+Paulo,Brazil&t=m&z=3&ie=UTF8&iwloc=&output=embed"
+                          : `https://maps.google.com/maps?q=${encodeURIComponent(result.location)}&t=m&z=13&ie=UTF8&iwloc=&output=embed`
+                      }
+                    />
                   </div>
                 </div>
 
