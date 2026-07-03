@@ -221,7 +221,7 @@ export default function App() {
               {/* Right Column: Map & Details */}
               <div className="space-y-6">
                 
-                {/* Map Placeholder */}
+                {/* Map */}
                 <div className="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden">
                   <div className="bg-gray-50 px-4 py-3 border-b border-gray-200 flex justify-between items-center">
                     <h3 className="font-bold text-[#333366] flex items-center gap-2">
@@ -232,11 +232,6 @@ export default function App() {
                     </span>
                   </div>
                   
-                  {/* 
-                    FREE KEYLESS GOOGLE MAPS INTEGRATION:
-                    Using Google's standard public embed service which is 100% free and requires NO API keys or Cloud setup!
-                    For the Belgium -> Brazil package, it renders the dynamic flight routing.
-                  */}
                   <div className="aspect-square bg-gray-100 relative group min-h-[300px] overflow-hidden">
                     <iframe
                       title="Live Package Location"
