@@ -21,15 +21,15 @@ const TRACKING_DATA = {
   },
   'B4V9Z1H6K3M8P2Q5W7Y0': {
     status: 'In Transit',
-    location: 'Chicago, IL 60607',
-    date: 'March 3, 2026',
+    location: 'Sao Paulo, Brazil',
+    date: 'July 2, 2026',
     time: 'On Time',
     carrier: 'USPS',
-    service: 'Priority Mail 2-Day',
+    service: 'Priority Mail 14-Day',
     history: [
-      { status: 'In Transit to Next Facility', location: '', time: '12:00 PM', date: 'March 3' },
-      { status: 'Departed USPS Regional Facility', location: 'CHICAGO IL NETWORK DISTRIBUTION CENTER', time: '9:45 AM', date: 'March 3' },
-      { status: 'Arrived at USPS Regional Facility', location: 'CHICAGO IL NETWORK DISTRIBUTION CENTER', time: '5:20 AM', date: 'March 3' },
+      { status: 'In Transit to Next Facility', location: 'BRUSSELS, BELGIUM NETWORK DISTRIBUTION CENTER', time: '7:00 PM', date: 'July 2' },
+      { status: 'Departed Antwerp International Sorting Center', location: 'ANTWERP, BELGIUM NETWORK DISTRIBUTION CENTER', time: '5:45 PM', date: 'July 2' },
+      { status: 'Shipment accepted at local post office.', location: 'ANTWERP, BELGIUM NETWORK DISTRIBUTION CENTER', time: '5:20 AM', date: 'July 2' },
     ],
     progress: 2
   },
