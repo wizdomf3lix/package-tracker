@@ -4,7 +4,7 @@ on:
   push:
     branches:
       - main
-      - master # Triggers automatically when you edit any file on GitHub
+      - master # Triggers on push/merge to main or master branch
 
 permissions:
   contents: write
@@ -25,11 +25,14 @@ jobs:
       - name: Install Dependencies
         run: npm install
 
+      - name: Fix execution permissions
+        run: chmod +x node_modules/.bin/vite
+
       - name: Build Project
         run: npm run build
 
       - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@v4
         with:
-          folder: dist
-          branch: gh-pages
+          folder: dist # The directory Vite builds your static site into
+          branch: gh-pages # The branch to publish to
