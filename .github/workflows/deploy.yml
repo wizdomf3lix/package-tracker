@@ -4,7 +4,7 @@ on:
   push:
     branches:
       - main
-      - master # Triggers automatically when you edit any file on GitHub
+      - master # Triggers automatically when you edit any files on GitHub
 
 permissions:
   contents: write
