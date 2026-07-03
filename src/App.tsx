@@ -2,7 +2,7 @@ import { Search, MapPin, Truck, Package, CheckCircle, Clock, AlertCircle } from 
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 
-// Mock data for the 3 specific track IDs
+// Mock data for the 3 specific tracking IDs
 const TRACKING_DATA = {
   '7G2K9L4P1W8X5M0Q3R6N': {
     status: 'Delivered',
