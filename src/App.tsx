@@ -26,6 +26,7 @@ const TRACKING_DATA = {
     carrier: 'USPS',
     service: 'Priority Mail 14-Day',
     history: [
+	  { status: 'Going through Brazilian Custom check before connecting to flight to Brazil', location: 'LISBON, PORTUGAL', time: '10:00 PM', date: 'July 6' },
 	  { status: 'Arrived at Lisbon transit facility', location: 'LISBON, PORTUGAL', time: '11:30 AM', date: 'July 6' },
 	  { status: 'Departed via international flight.', location: 'FRANKFURT, GERMANY', time: '11:30 AM', date: 'July 3' },
 	  { status: 'Arrived at Frankfurt Airport Cargo Terminal.', location: 'FRANKFURT, GERMANY', time: '6:30 AM', date: 'July 3' },
