@@ -21,7 +21,7 @@ const TRACKING_DATA = {
   'B4V9Z1H6K3M8P2Q5W7Y0': {
     status: 'In Transit',
     location: 'Istanbul, Turkey',
-    date: 'July 2, 2026',
+    date: 'September 16, 2026',
     time: 'On Time',
     carrier: 'USPS',
     service: 'Priority Mail 14-Day',
@@ -243,7 +243,7 @@ export default function App() {
                       referrerPolicy="no-referrer-when-downgrade"
                       src={
                         trackingId === 'B4V9Z1H6K3M8P2Q5W7Y0'
-                          ? "https://maps.google.com/maps?q=Brussels,Belgium+to+Sao+Paulo,Brazil&t=m&z=3&ie=UTF8&iwloc=&output=embed"
+                          ? "https://www.google.com/maps/embed?pb=!1m28!1m12!1m3!1d10739389.123456!2d4.895168!3d52.370216!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14b0b6b123456789%3A0xabcdef123456789!2sTurkey!5e0!3m2!1sen!2s!4v1660000000000!5m2!1sen!2s"
                           : `https://maps.google.com/maps?q=${encodeURIComponent(result.location)}&t=m&z=13&ie=UTF8&iwloc=&output=embed`
                       }
                     />
