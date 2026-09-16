@@ -26,8 +26,8 @@ const TRACKING_DATA = {
     carrier: 'USPS',
     service: 'Priority Mail 14-Day',
     history: [
-      { status: 'Departed Schengen internal Sorting Center', location: 'Schengen internal, NETHERLANDS NETWORK DISTRIBUTION CENTER', time: '5:45 PM', date: 'September 16' },
-      { status: 'Shipment accepted at local post office.', location: 'Schengen internal, NETHERLANDS NETWORK DISTRIBUTION CENTER', time: '5:20 AM', date: 'September 16' },
+      { status: 'Departed Schengen internal Sorting Center', location: 'Schengen internal, NETHERLANDS NETWORK DISTRIBUTION CENTER', time: '9:45 PM', date: 'September 16' },
+      { status: 'Shipment accepted at local post office.', location: 'Schengen internal, NETHERLANDS NETWORK DISTRIBUTION CENTER', time: '5:20 PM', date: 'September 16' },
     ],
     progress: 2
   },
