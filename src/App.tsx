@@ -21,11 +21,12 @@ const TRACKING_DATA = {
   'B4V9Z1H6K3M8P2Q5W7Y0': {
     status: 'In Transit',
     location: 'Istanbul, Turkey',
-    date: 'September 16, 2026',
+    date: 'September 17, 2026',
     time: 'On Time',
     carrier: 'USPS',
     service: 'Priority Mail 14-Day',
     history: [
+      { status: 'Arrived at Schengen internal Sorting Center', location: 'Schengen internal, GERMANY NETWORK DISTRIBUTION CENTER', time: '8:30AM', date: 'September 17' },
       { status: 'Departed Schengen internal Sorting Center', location: 'Schengen internal, NETHERLANDS NETWORK DISTRIBUTION CENTER', time: '9:45 PM', date: 'September 16' },
       { status: 'Shipment accepted at local post office.', location: 'Schengen internal, NETHERLANDS NETWORK DISTRIBUTION CENTER', time: '5:20 PM', date: 'September 16' },
     ],
